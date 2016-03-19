@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# OS X
+.DS_Store
+
 # Distribution / packaging
 .Python
 env/
@@ -60,3 +63,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Caffe temporary stuff
+tmp.prototxt
+
+# Generated frames
+security/data/frames/*.jpg
