@@ -69,3 +69,7 @@ tmp.prototxt
 
 # Generated frames
 security/data/frames/*.jpg
+images/frames/*.jpg
+
+# Secrets
+secrets.py
