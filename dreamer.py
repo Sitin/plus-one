@@ -24,9 +24,9 @@ from file_utils import *
 
 
 # Original emotion recognition model
-model_path = '/Users/sitin/Documents/Workspace/caffe/models/bvlc_googlenet/' # substitute your path here
+model_path = 'models/bvlc_googlenet/' # substitute your path here
     
-emotions = Dreamer(
+dreamer = Dreamer(
     net_fn=model_path + 'deploy.prototxt',
     param_fn=model_path + 'bvlc_googlenet.caffemodel',
     end_level='inception_5b/output'
@@ -42,7 +42,7 @@ while True:
             base_image = np.float32(PIL.Image.open('security/data/frames/screenshot.jpg'))
             image = resizearray(base_image, 320, 240)
             
-            dream = emotions.deepdream(image, end='inception_3a/output')
+            dream = dreamer.deepdream(image, end='inception_3a/output')
             dream = resizearray(dream, 1024, 768)
             
             fromarray(dream - resizearray(image, 1024, 768) + base_image).save('security/data/frames/screenshot-dream.jpg')
